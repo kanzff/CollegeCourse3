@@ -3,28 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
     <title>College Course</title>
     <style>
-      div {
-        width: 200px;
-      }
-      h2 {
-        font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      li {
-        font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-        border-bottom: 1px solid #ccc;
-      }
-      li:last-child {
-        border: none;
-      }
       li a {
         text-decoration: none;
         color: #000;
@@ -37,26 +19,70 @@
         transition: font-size 0.3s ease, background-color 0.3s ease;
       }
       li a:hover {
-        font-size: 30px;
+        font-size: 15px;
         background: #f6f6f6;
       }
       #map {
         height: 400px;
         width: 100%;
       }
+      .bg-3 { 
+      background-color: #ffffff;
+      color: #555555;
+    }
+    .navbar {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 0;
+        border-radius: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        letter-spacing: 5px;
+    }
+    .secound-title {
+        line-height: 1.5;
+        text-align: center;
+        font-size: 30px;
+        font-family: "Segoe UI",Arial,sans-serif;
+        font-weight: 400;
+        margin: 10px 0;
+        letter-spacing: 4px;
+    }
+    .intro {
+        line-height: 1.5;
+        text-align: justify;
+        font-size: 20px;
+        font-family: Arial;
+        font-weight: 0;
+        margin: 10px 0;
+        letter-spacing: 1px;
+    }
     </style>
   </head>
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="/">COLLAGE COURSE</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                  <li id="home"><a href="/">HOME</a></li>
+                  <li id="login"><a href="/login">LOGIN</a></li>
+                  <li id="contact"><a href="/contact">CONTACT US</a></li>
+              </ul>
+           </div>
+      </div>
+  </nav>
     <h2></h2>
-    <h2>COLLEGE COURSE</h2>
-    <div>
-      <ul>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-      </ul>
-    </div>
-    
     <div id="map"></div>
+    <div class="cointainer" style="max-width:80%; padding-left:10%">
+      <h2 class="secound-title">"If there is no struggle,
+        there is no progress</h2>
+      <p class="intro"> 
+        <center>Frederick Douglass</center>
+      </p>
+      </div>
     <script>
       function initMap() {
         //option
@@ -77,12 +103,19 @@
           },
           map: map
         })
+        //marker
         var marker = new google.maps.Marker({
           position: {
             lat:-6.5024844,
             lng:106.7942405
           },
           map: map
+        })
+        var infoWindow = new google.maps.infoWindow({
+          content: '<h1>HACKTIV8 (glosgow-fox)</h1>'
+        })
+        marker.addListener('clik', function(){
+          infoWindow.open(map, marker)
         })
       }
     </script>

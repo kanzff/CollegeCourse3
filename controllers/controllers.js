@@ -71,6 +71,9 @@ class Controller {
             }
         })
     }
+    static contact (req, res) {
+        res.render('contact')
+    }
 }
 
 module.exports = Controller

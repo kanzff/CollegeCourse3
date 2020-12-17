@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #table{
+            margin: auto;
+            width: 300px;
+            height: auto;
+        }
+    </style>
     <title>Students</title>
 </head>
 <body>
-    <%- include('navbar') %> 
-    <h1>Students</h1>
-    <a href="/courses/add">Add Course</a>
+    <div>
+        <%- include('navbar') %> 
+    </div>
+    <center>
+        <h1>Students</h1>
+        <a href="/courses/add">Add Course</a>
+    </center>
     <br><br>
-    <table border="1">
+    <table id="table" border="1">
         <thead>
             <tr>
                 <th>Name</th>
