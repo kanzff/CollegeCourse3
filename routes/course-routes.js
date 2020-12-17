@@ -10,10 +10,10 @@ router.get('/add', isAdmin, CourseController.add)
 
 router.post('/add', CourseController.addPost)
 
-router.get('/edit/:id', CourseController.edit)
+router.get('/edit/:id', isAdmin, CourseController.edit)
 
 router.post('/edit/:id', CourseController.editPost)
 
-router.get('/delete/:id', CourseController.delete)
+router.get('/delete/:id', isAdmin, CourseController.delete)
 
 module.exports = router

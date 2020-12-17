@@ -10,7 +10,7 @@ const isAdmin = (req, res, next) => {
     if (req.session.userRole === 'admin') {
         next()
     } else {
-        res.redirect('/courses?msg= Anda bukan admin')
+        res.redirect('/courses?msg=Anda bukan admin')
     }
 }
 
