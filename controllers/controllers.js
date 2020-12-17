@@ -30,7 +30,8 @@ class Controller {
     }
 
     static login(req, res) {
-        res.render('login')
+        let msg = req.query.msg
+        res.render('login', {msg})
     }
 
     static loginPost(req, res) {
@@ -50,10 +51,10 @@ class Controller {
                     req.session.userRole = user.role
                     res.redirect('/courses')
                 } else {
-                    res.send('username dan password invalid')
+                    res.redirect('/login?msg=Username dan Password Invalid')
                 }
             } else {
-                res.send("username tidak ditemukan")
+                res.redirect("/login?msg=Username Tidak Ditemukan")
             }
         })
         .catch(err => {

@@ -2,9 +2,10 @@ const {Course} = require('../models/index')
 
 class CourseController {
     static readCourses(req, res) {
+        let msg = req.query.msg
         Course.findAll()
         .then(data => {
-            res.render('courses', {data})
+            res.render('courses', {data, msg})
         })
         .catch(err => {
             res.send(err)
