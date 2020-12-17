@@ -40,6 +40,10 @@
         font-size: 30px;
         background: #f6f6f6;
       }
+      #map {
+        height: 400px;
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -51,5 +55,39 @@
         <li><a href="/signup">Sign Up</a></li>
       </ul>
     </div>
+    
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        //option
+        var options = {
+          zoom: 10,
+          center: {
+            lat:-6.4024844,
+            lng:106.7942405
+          }
+        }
+        //map
+        var map = new google.maps.Map(document.getElementById('map'), options)
+        
+        var marker = new google.maps.Marker({
+          position: {
+            lat:-6.2605213957322885,
+            lng:106.78158937514478
+          },
+          map: map
+        })
+        var marker = new google.maps.Marker({
+          position: {
+            lat:-6.5024844,
+            lng:106.7942405
+          },
+          map: map
+        })
+      }
+    </script>
+    <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqPVZrS-0mGQ4swii76-hFkLKWQ1jtwBk&callback=initMap">
+    </script>
   </body>
 </html>
