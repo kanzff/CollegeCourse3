@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+<body>
+    <%- include('navbar') %> 
+    <h1><%= user.full_name %> Courses</h1>
+    <form action="/students/<%= user.id %> " method="POST">
+        <div>
+            <label for="course">Select Course to Add</label><br>
+            <select name="courseId">
+                <% courses.forEach(el => { %>
+                    <option value="<%= el.id %>"><%= el.course_name %></option>
+                <% }) %> 
+            </select>
+        </div>
+        <div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+    <br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Lecturer</th>
+                <th>Score</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <% user.Courses.forEach(el => { %>
+            <tbody>
+                <tr>
+                    <td><%= el.course_name %></td>
+                    <td><%= el.lecturer_name %></td>
+                    <th><%= el.score %> </th>
+                    <td><%= el.location %> </td>
+                </tr>
+            </tbody>
+        <% }) %> 
+    </table>
+</body>
+</html>
