@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+<body>
+    <%- include('navbar') %> 
+    <h1>Courses</h1>
+    <a href="/courses/add">Add Course</a>
+    <br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Lecturer</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <% data.forEach(el => { %>
+            <tbody>
+                <tr>
+                    <td><%= el.course_name %></td>
+                    <td><%= el.lecturer_name %></td>
+                    <td><%= el.location %> </td>
+                    <td><a href="/courses/edit/<%= el.id %> ">Edit</a> | 
+                        <a href="/courses/delete/<%= el.id %> ">Delete</a></td>
+                </tr>
+            </tbody>
+        <% }) %> 
+    </table>
+</body>
+</html>

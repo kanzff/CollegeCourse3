@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+</head>
+<body>
+    <form action="/courses/edit/<%= data.id %> " method="POST">
+        <label><b>Course Name</b></label> <br>
+        <input
+          type="text"
+          name="course_name"
+          value="<%= data.course_name %> "
+        /><br><br>
+
+        <label><b>Lecturer Name</b></label> <br>
+        <input
+          type="text"
+          name="lecturer_name"
+          value="<%= data.lecturer_name %> "
+        /><br><br>
+
+        <label><b>Location</b></label><br>
+        <input
+          type="text"
+          name="location"
+          value="<%= data.location %> "
+        /><br><br>
+        <div>
+            <button type="submit">Edit</button>
+        </div>
+      </form>
+</body>
+</html>

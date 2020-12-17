@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+    <%- include('navbar') %> 
+    <h1>Students</h1>
+    <a href="/courses/add">Add Course</a>
+    <br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <% data.forEach(el => { %>
+            <tbody>
+                <tr>
+                    <td><%= el.full_name %></td>
+                    <td><a href="/students/<%= el.id %> ">See Courses</a></td>
+                </tr>
+            </tbody>
+        <% }) %> 
+    </table>
+</body>
+</html>
