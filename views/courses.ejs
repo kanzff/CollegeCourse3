@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table{
+            margin: auto;
+            width: 500px;
+        }
+    </style>
     <title>Courses</title>
 </head>
 <body>
-    <%- include('navbar') %> 
-    <h1>Courses</h1>
-    <a href="/courses/add">Add Course</a>
+    <div>
+        <%- include('navbar') %> 
+    </div>
+    <h1>
+        <center>Courses</center>
+    </h1>
+    <center><a href="/courses/add">Add Course</a></center>
     <br><br>
     <table border="1">
         <thead>
@@ -32,7 +42,7 @@
         <% }) %> 
     </table>
     <% if (msg) { %>
-        <h3><%= msg %></h3>
+        <center><h3><%= msg %></h3></center>
       <% } %> 
 </body>
 </html>

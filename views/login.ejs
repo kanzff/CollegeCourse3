@@ -5,52 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>College Course</title>
     <style>
+      body {
+        background-color: #555555;
+        height: 100%;
+      }
       div {
-        width: 200px;
-      }
-      h2 {
-        font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      li {
-        font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-        border-bottom: 1px solid #ccc;
-      }
-      li:last-child {
-        border: none;
-      }
-      li a {
-        text-decoration: none;
-        color: #000;
-        display: block;
-        width: 200px;
-        -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-        -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-        -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-        -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-        transition: font-size 0.3s ease, background-color 0.3s ease;
-      }
-      li a:hover {
-        font-size: 30px;
-        background: #f6f6f6;
+        position: center;
+        margin: auto;
       }
     </style>
   </head>
   <body>
-    <h2></h2>
-    <%- include('navbar') %>
-    <!-- <div>
-      <ul>
-        <li><a href="/home">Home</a></li><br>
-      </ul>
-    </div> -->
-    <form action="/login" method="POST">
+    <div>
+      <%- include('navbar') %>
+    </div>
+    <h3>LOGIN</h3>
+    <form id="form" action="/login" method="POST">
+      <div>
         <label><b>Username</b></label> <br>
         <input
           type="text"
@@ -63,10 +34,11 @@
           name="password"
           placeholder="Your password.."/>
           <br><br>
-          <div>
-            <button type="submit">Login</button>
+        <div>
+          <button type="submit">Login</button>
         </div>
-      </form>
+      </div>
+    </form>
       <% if (msg) { %>
         <h3><%= msg %></h3>
       <% } %> 

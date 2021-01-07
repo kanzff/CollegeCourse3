@@ -3,30 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Course</title>
+    <style>
+        #form{
+          margin: auto;
+        }
+        input{
+          width: 300px;
+        }
+        label{
+          text-align: left;
+        }
+    </style>
+    <title>Admin</title>
 </head>
 <body>
+    <div>
+        <%- include('navbar') %> 
+    </div>
+    <center>
+      <h1>Course</h1>
+    <br><br>
     <form action="/courses/add" method="POST">
-        <label><b>Course Name</b></label> <br>
-        <input
-          type="text"
-          name="course_name"
-        /><br><br>
+      <label><b>Course Name</b></label> <br>
+      <input
+        type="text"
+        name="course_name"
+      /><br><br>
 
-        <label><b>Lecturer Name</b></label> <br>
-        <input
-          type="text"
-          name="lecturer_name"
-        /><br><br>
+      <label><b>Lecturer Name</b></label> <br>
+      <input
+        type="text"
+        name="lecturer_name"
+      /><br><br>
 
-        <label><b>Location</b></label><br>
-        <input
-          type="text"
-          name="location"
-        /><br><br>
-        <div>
-          <button type="submit">Add</button>
-      </div>
-      </form>
-</body>
+      <label><b>Location</b></label><br>
+      <input
+        type="text"
+        name="location"
+      /><br><br>
+      <div>
+        <button type="submit">Add</button>
+    </div>
+    </form>
+      </center>
+  </body>
 </html>

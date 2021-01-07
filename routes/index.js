@@ -16,6 +16,8 @@ router.post('/login', Controller.loginPost)
 
 router.get('/logout', Controller.logout)
 
+router.use('/contact', Controller.contact)
+
 router.use('/students', user)
 
 router.use('/courses', course)

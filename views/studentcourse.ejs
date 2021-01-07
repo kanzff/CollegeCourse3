@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #table {
+            margin: auto;
+            width: 400px;
+        }
+    </style>
     <title>Courses</title>
 </head>
 <body>
-    <%- include('navbar') %> 
-    <h1><%= user.full_name %> Courses</h1>
-    <form action="/students/<%= user.id %> " method="POST">
-        <div>
-            <label for="course">Select Course to Add</label><br>
-            <select name="courseId">
-                <% courses.forEach(el => { %>
-                    <option value="<%= el.id %>"><%= el.course_name %></option>
-                <% }) %> 
-            </select>
-        </div>
-        <div>
-            <button type="submit">Add</button>
-        </div>
-    </form>
+    <div>
+        <%- include('navbar') %> 
+    </div>
+    <center>
+        <h1><%= user.full_name %> Courses</h1>
+        <form action="/students/<%= user.id %> " method="POST">
+            <div>
+                <label for="course">Select Course to Add</label><br>
+                <select name="courseId">
+                    <% courses.forEach(el => { %>
+                        <option value="<%= el.id %>"><%= el.course_name %></option> <br>
+                    <% }) %> 
+                </select>
+            </div>
+            <div>
+                <br><button type="submit">Add</button>
+            </div>
+        </form>
+    </center>
     <br><br>
-    <table border="1">
+    <table id="table" border="1">
         <thead>
             <tr>
                 <th>Course Name</th>

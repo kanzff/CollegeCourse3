@@ -3,22 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
     <title>Document</title>
     <style>
-        h2 {
-        font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
+        li a {
+          text-decoration: none;
+          color: #000;
+          display: block;
+          width: 200px;
+          -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+          -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+          -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+          -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+          transition: font-size 0.3s ease, background-color 0.3s ease;
+        }
+        li a:hover {
+          font-size: 20px;
+          background: #f6f6f6;
+        }
+        #map {
+          height: 400px;
+          width: 100%;
+        }
+        .bg-3 { 
+        background-color: #ffffff;
+        color: #555555;
       }
-    </style>
+      .navbar {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          border: 0;
+          border-radius: 0;
+          margin-bottom: 0;
+          font-size: 15px;
+          letter-spacing: 5px;
+      }
+      </style>
 </head>
 <body>
-    <h2>COLLEGE COURSES</h2>
-    <a href="/signup">Sign Up</a>
-    <a href="/login">Login</a>
-    <a href="/logout">Logout</a>
-    <a href="/students">Students</a>
-    <a href="/courses">Courses</a>
-    <hr>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">COLLAGE COURSE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="signup"><a href="/signup">Sign Up</a></li>
+                    <li id="login"><a href="/logout">Logout</a></li>
+                    <li id="contact"><a href="/students">Students</a></li>
+                    <li id="contact"><a href="/courses">Courses</a></li>
+                </ul>
+             </div>
+        </div>
 </body>
 </html>
